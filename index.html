@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collins Portifolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <label class="logo">Collins</label>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portifolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Software Developer</p>
+          <h1>
+            Hi, I'm <br />
+            Collins Muchui
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!---------------- About -------------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/background.JPG" alt="" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="subtitle">About Me</h1>
+            <p>
+              Am a full-stack web developer as well a a react native (cross
+              platform) mobile app developer. Am committed to producing the best
+              jobs to my clients. motivated and disciplined
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('expirience')">
+                Expirience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>UI/UX</span> <br />Designning Web and mobile Appp
+                  interfaces
+                </li>
+                <li>
+                  <span>Web Developer</span> <br />full-stack Web developer
+                </li>
+                <li>
+                  <span>Mobile App Dev</span> <br />React-Native Mobile app
+                  developer
+                </li>
+              </ul>
+            </div>
+            <!-- Expirience -->
+            <div class="tab-contents" id="expirience">
+              <ul>
+                <li>
+                  <span>theJitu Intern</span> <br />full-stack web developer
+                </li>
+                <li><span>FreeLancer</span> <br />full-stack Web developer</li>
+                <li><span>Hardware Maintainer</span> <br />Mtumishi tech</li>
+              </ul>
+            </div>
+            <!-- Education -->
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2019 -2024</span> <br />Bs. Information Technology
+                  (Dekut)
+                </li>
+                <li>
+                  <span>2015 - 2018</span> <br />KCSE Miathene Boys High School
+                </li>
+                <li><span>2006 - 2014</span> <br />CCPE Kamuthanga Pry Sch</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+  </body>
+</html>

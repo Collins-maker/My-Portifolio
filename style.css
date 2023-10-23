@@ -334,7 +334,6 @@ form .btn2{
 
 nav .icon{
     display: none;
-    border: 2px solid red;
 }
 
 /* ------------css for small screens --------------- */
@@ -369,8 +368,31 @@ nav .icon{
         nav .icon{
             display: block;
             font-size: 25px;
+            color: #ffff;
         }
         
+        nav ul{
+            background: #ff004f;
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 200px;
+            height: 100vh;
+            padding-top: 50px;
+            z-index: 2;
+            transition: right 0.5s;
+        }
+
+        nav ul li{
+            display: block;
+            margin: 25px;
+        }
+        nav ul .icon{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            cursor: pointer;
+        }
 
 }
 

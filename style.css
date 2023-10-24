@@ -4,6 +4,10 @@
     font-family: 'Poppins',sans-serif;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #080808;
     color: #ffff;
@@ -11,9 +15,21 @@ body{
 #header{
 width: 100%;
 height: 100vh;
-background-image: url(images/background.png);
-background-size: cover;
-background-position: center;
+}
+.header-container{
+display: flex;
+}
+.header-text{
+    flex-basis: 40%;
+    width: 100%;
+  margin: auto 10px;
+}
+.header-img{
+    flex-basis: 60%;
+}
+.header-img img{
+    width: 100%;
+    height: 100%;
 }
 .container{
     padding: 10px 10%;
@@ -55,10 +71,9 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
-.header-text{
-    margin-top: 20px;
-    font-size: 30px;
-}
+/* .header-text{
+   
+} */
 .header-text h1{
 font-size: 60px;
 margin-top: 20px;
@@ -319,5 +334,113 @@ form .btn2{
 }
 .copyright i{
     color: #ff004f;
+}
+
+nav .icon{
+    display: none;
+}
+
+/* ------------css for small screens --------------- */
+
+@media only screen and (max-width: 600px){
+
+    #header{
+        width: 100%;
+        height: 100vh;
+        }
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+        .header-text{
+            flex-basis: 45%;
+            width: 100%;
+          margin: auto 10px;
+          margin-top: 50px;
+          font-size: 16px;
+        }
+        .header-text h1{
+            font-size: 30px;
+        }
+        .header-img{
+            margin-top: 10%;
+            flex-basis: 45%;
+            width: 100%;
+        }
+        .header-img img{
+            width: 100%;
+            height: 100%;
+        }
+        nav .icon{
+            display: block;
+            font-size: 25px;
+            color: #ffff;
+        }
+        
+        nav ul{
+            background: #ff004f;
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 200px;
+            height: 100vh;
+            padding-top: 50px;
+            z-index: 2;
+            transition: right 0.5s;
+        }
+
+        nav ul li{
+            display: block;
+            margin: 25px;
+        }
+        nav ul .icon{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            cursor: pointer;
+        }
+
+        .subtitle{
+            font-size: 40px;
+        }
+        .about-col-1, .about-col-2{
+            flex-basis: 100%;
+        }
+        .about-col-1{
+            margin-bottom: 30px;
+        }
+        .about-col-2{
+            font-size: 14px;
+        }
+        .tab-links{
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        .services-list{
+           
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 50px 20px 0;
+        }
+
+        .contact-left, .contact-right{
+            flex-basis: 100%;
+        }
+
+        .copyright{
+            font-size: 14px;
+        }
+
+      
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+
 }
 

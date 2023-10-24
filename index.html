@@ -16,11 +16,11 @@
         <nav>
           <label class="logo">Collins</label>
           <ul id="sidemenu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portifolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portifolio">Portifolio</a></li>
+            <li><a href="#contact">Contact</a></li>
             <i
               class="fa-regular fa-circle-xmark icon"
               onclick="closemenu()"
@@ -159,7 +159,7 @@
     </div>
 
     <!-- -----------portifolio-------------- -->
-    <div id="portfolio">
+    <div id="portifolio">
       <div class="container">
         <h1 class="subtitle">My Work</h1>
         <div class="work-list">
@@ -220,7 +220,7 @@
             >
           </div>
           <div class="contact-right">
-            <form>
+            <form name="submit-to-google-sheet">
               <input type="text" name="name" placeholder="Your name" required />
               <input
                 type="email"
@@ -235,6 +235,7 @@
               ></textarea>
               <button type="submit" class="btn btn2">Submit</button>
             </form>
+            <span id="msg"></span>
           </div>
         </div>
       </div>
@@ -271,6 +272,26 @@
       function closemenu() {
         sidemenu.style.right = "-200px";
       }
+    </script>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwp2TdVnAc3cA1fw1BGGgnZRm9uk-a_AisEnpQ3NFh8jPgK1sdqXYO6yAvr7kj7S7Cy7Q/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully ...";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
   </body>
 </html>

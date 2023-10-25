@@ -363,6 +363,7 @@ nav .icon{
     .header-container{
         display: flex;
         flex-direction: column;
+        margin-bottom: 20px;
         justify-content: space-between;
         }
         .header-text{
